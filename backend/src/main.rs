@@ -7,19 +7,18 @@ use regex::Regex;
 use std::thread;
 
 thread_local! {
-    static project_root: String = fs::canonicalize(
-        env::var("PROJECT_ROOT").unwrap()
-    ).unwrap().to_str().unwrap().to_string()
+    static project_root: RefCell<String> = RefCell::new(
+		fs::canonicalize(
+			env::var("PROJECT_ROOT").unwrap()
+		).unwrap().to_str().unwrap().to_string()
+	)
 }
 
 fn main() {
-    let serve = TcpListener::bind("127.0.0.1:8080").unwrap();
-    let serve_thread = thread::spawn(move || {
-        for stream in serve.incoming() {
-            handle_req(stream.unwrap());
-        }
-    });
-    serve_thread.join().unwrap();
+	let listener = TcpListener::bind("127.0.0.1:8080").unwrap();
+	for stream in listener.incoming() {
+		thread::spawn(|| handle_req(stream.unwrap()));
+	}
 }
 
 fn handle_req (mut stream: TcpStream) {
@@ -29,6 +28,7 @@ fn handle_req (mut stream: TcpStream) {
     let value =
         String::from_utf8_lossy(&value[..])
         .into_owned();
+	println!("{}", &value);
     let value: Vec<&str> = value
         .lines()
         .collect();
@@ -49,29 +49,34 @@ fn handle_req (mut stream: TcpStream) {
              .to_string()
          )
         .collect();
-    project_root.with(|a| {
-        println!("project root: {}", a);
-    });
     println!("accessed path {}", path);
     match path {
         "/" => {
             stream.write(b"HTTP/1.1 200 OK\n\n").unwrap();
             stream.write(
-                std::fs::read_to_string("linkFiles/index.html")
+                std::fs::read_to_string(
+					fs::canonicalize(
+						std::path::Path::new(project_root.with(|a| a.borrow().clone()).as_str())
+							.join("linkFiles/index.html")
+					).unwrap()
+				)
                     .unwrap()
                     .as_bytes()
             ).unwrap();
         },
-//         e if statics.contains(&(e.strip_prefix("/").unwrap()).to_string()) => {
-//             stream.write(b"HTTP/1.1 200 OK\n\n").unwrap();
-//             stream.write(
-//                 std::fs::read_to_string(
-//                     format!("linkFiles/{}", e)
-//                 )
-//                     .unwrap()
-//                     .as_bytes()
-//             ).unwrap();
-//         },
+        e if statics.contains(&(e.strip_prefix("/").unwrap()).to_string()) => {
+            stream.write(b"HTTP/1.1 200 OK\n\n").unwrap();
+            stream.write(
+                std::fs::read_to_string(
+					fs::canonicalize(
+						std::path::Path::new(project_root.with(|a| a.borrow().clone()).as_str())
+							.join(format!("linkFiles/{}", e))
+					).unwrap()
+                )
+                    .unwrap()
+                    .as_bytes()
+            ).unwrap();
+        },
         _ => {
             stream
                 .write(b"HTTP/1.1 404 NOT FOUND\n\n")
