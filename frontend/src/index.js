@@ -1,18 +1,10 @@
+import Te from "./components/te.js"
+import Button from "./components/button.js"
+
 try {
 
-customElements.define("te-",
-	class extends HTMLElement {
-		constructor () {
-			super()
-			this.attachShadow({ mode: "open" })
-			this.shadowRoot.innerHTML = `
-				<div>
-					te
-				</div>
-			`
-		}
-	}
-)
+customElements.define("te-", Te)
+customElements.define("button-", Button)
 
 } catch (e) {
 	alert(e)
