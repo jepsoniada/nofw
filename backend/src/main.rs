@@ -5,6 +5,8 @@ use std::cell::{RefCell};
 use regex::Regex;
 use std::path::{Path, PathBuf};
 
+mod mime_resolve;
+
 thread_local! {
     static PROJECT_ROOT: RefCell<String> = RefCell::new(
 		fs::canonicalize(
