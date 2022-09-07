@@ -6,6 +6,7 @@ use regex::Regex;
 use std::path::{Path, PathBuf};
 
 mod mime_resolve;
+mod http;
 
 thread_local! {
     static PROJECT_ROOT: RefCell<String> = RefCell::new(
@@ -52,35 +53,54 @@ fn handle_req (mut stream: TcpStream) {
     println!("accessed path {}", path);
     match path {
         "/" => {
-            stream.write(b"HTTP/1.1 200 OK\n\n").unwrap();
+            let file_name = "linkFiles/index.html";
             stream.write(
-                fs::read_to_string(
-					fs::canonicalize(
-						Path::new(PROJECT_ROOT.with(|a| a.borrow().clone()).as_str())
-							.join("linkFiles/index.html")
-					).unwrap()
-				)
-                    .unwrap()
-                    .as_bytes()
+                http::response_builder(
+                    http::CODES.iter().find(|a| a.0 == 200).unwrap(),
+                    vec!(
+                        http::Header::new(
+                            "content-type", 
+                            mime_resolve::mime_resolve(file_name).unwrap().as_str()
+                        )
+                    ),
+                    fs::read_to_string(
+                        fs::canonicalize(
+                            Path::new(PROJECT_ROOT.with(|a| a.borrow().clone()).as_str())
+                                .join(file_name)
+                        ).unwrap()
+                    ).unwrap()
+                ).as_bytes()
             ).unwrap();
         },
         e if statics.contains(&(e.strip_prefix("/").unwrap()).to_string()) => {
-            stream.write(b"HTTP/1.1 200 OK\nContent-Type: text/javascript\n\n").unwrap();
+            let file_name = format!("linkFiles/{}", e);
+            let file_name = file_name.as_str();
             stream.write(
-                fs::read_to_string(
-					fs::canonicalize(
-						Path::new(PROJECT_ROOT.with(|a| a.borrow().clone()).as_str())
-							.join(format!("linkFiles/{}", e))
-					).unwrap()
-                )
-                    .unwrap()
-                    .as_bytes()
+                http::response_builder(
+                    http::CODES.iter().find(|a| a.0 == 200).unwrap(),
+                    vec!(
+                        http::Header::new(
+                            "content-type", 
+                            mime_resolve::mime_resolve(file_name).unwrap().as_str()
+                        )
+                    ),
+                    fs::read_to_string(
+                        fs::canonicalize(
+                            Path::new(PROJECT_ROOT.with(|a| a.borrow().clone()).as_str())
+                                .join(file_name)
+                        ).unwrap()
+                    ).unwrap()
+                ).as_bytes()
             ).unwrap();
         },
         _ => {
-            stream
-                .write(b"HTTP/1.1 404 NOT FOUND\n\n")
-                .unwrap();
+            stream.write(
+                http::response_builder(
+                    http::CODES.iter().find(|a| a.0 == 200).unwrap(),
+                    Vec::new(),
+                    String::new()
+                ).as_bytes()
+            ).unwrap();
         },
     }
     stream.flush().unwrap();
