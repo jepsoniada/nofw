@@ -1,10 +1,11 @@
-import Te from "./components/te.js"
-import Button from "./components/button.js"
+import Guess from "./components/guess.js"
+// import data from "shared/data.js"
 
 try {
 
-customElements.define("te-", Te)
-customElements.define("button-", Button)
+let data = await fetch("shared/data.js")
+alert(data)
+customElements.define("guess-", Guess)
 
 } catch (e) {
 	alert(e)

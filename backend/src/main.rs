@@ -72,6 +72,26 @@ fn handle_req (mut stream: TcpStream) {
                 ).as_bytes()
             ).unwrap();
         },
+        "/api/dictionaries" => {
+            let file_name = "data.json";
+            stream.write(
+                http::response_builder(
+                    http::CODES.iter().find(|a| a.0 == 200).unwrap(),
+                    vec!(
+                        http::Header::new(
+                            "content-type", 
+                            mime_resolve::mime_resolve(file_name).unwrap().as_str()
+                        )
+                    ),
+                    fs::read_to_string(
+                        fs::canonicalize(
+                            Path::new(PROJECT_ROOT.with(|a| a.borrow().clone()).as_str())
+                                .join(file_name)
+                        ).unwrap()
+                    ).unwrap()
+                ).as_bytes()
+            ).unwrap();
+        },
         e if statics.contains(&(e.strip_prefix("/").unwrap()).to_string()) => {
             let file_name = format!("linkFiles/{}", e);
             let file_name = file_name.as_str();
