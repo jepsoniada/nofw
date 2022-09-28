@@ -116,7 +116,7 @@ fn handle_req (mut stream: TcpStream) {
         _ => {
             stream.write(
                 http::response_builder(
-                    http::CODES.iter().find(|a| a.0 == 200).unwrap(),
+                    http::CODES.iter().find(|a| a.0 == 404).unwrap(),
                     Vec::new(),
                     String::new()
                 ).as_bytes()

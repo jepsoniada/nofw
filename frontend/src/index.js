@@ -1,11 +1,12 @@
-import Guess from "./components/guess.js"
-// import data from "shared/data.js"
+import Guess from "/components/guess.js"
+import DictionaryPicker from "/components/dictionaryPicker.js"
+
 
 try {
 
-let data = await fetch("shared/data.js")
-alert(data)
 customElements.define("guess-", Guess)
+customElements.define("dictionary-picker-", DictionaryPicker)
+
 
 } catch (e) {
 	alert(e)

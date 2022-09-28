@@ -5,11 +5,11 @@ export default class extends HTMLElement {
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
 			<div>
-				<input>
+				values<br>
+				${
+					Object.entries(data)
+				}
 			</div>
 		`
-		this.shadowRoot.querySelector("input").addEventListener("input", () =>
-			alert(21)
-		)
 	}
 }
