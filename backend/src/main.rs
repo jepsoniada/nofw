@@ -42,6 +42,7 @@ fn handle_req (mut stream: TcpStream) {
         .captures(&value).unwrap()
         .name("path").unwrap()
         .as_str();
+    println!("accessed path {}", path);
 	let statics: Vec<String> = dir_traverse("linkFiles").iter()
 		.map(|a| a
 			.clone().into_os_string().into_string().unwrap()
@@ -49,8 +50,6 @@ fn handle_req (mut stream: TcpStream) {
 			.to_string()
 		)
 		.collect();
-	println!("statics {:?}", statics);
-    println!("accessed path {}", path);
     match path {
         "/" => {
             let file_name = "linkFiles/index.html";

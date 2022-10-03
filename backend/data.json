@@ -1,3 +1,223 @@
-{
-	"received": true
-}
+[
+	{
+		"fileName": "some dictionary name",
+		"dictionary": [
+			{
+				"type": "sub a",
+				"data": [
+					{
+						"question": "question a.a.1",
+						"answer": "answer a.a.1"
+					},
+					{
+						"question": "question a.a.2",
+						"answer": "answer a.a.2"
+					}
+				]
+			},
+			{
+				"type": "sub b",
+				"data": [
+					{
+						"question": "question a.b.1",
+						"answer": "answer a.b.1"
+					},
+					{
+						"question": "question a.b.2",
+						"answer": "answer a.b.2"
+					}
+				]
+			}
+		]
+	},
+	{
+		"fileName": "secound dict",
+		"dictionary": [
+			{
+				"type": "sub c",
+				"data": [
+					{
+						"question": "question b.c.1",
+						"answer": "answer b.c.1"
+					},
+					{
+						"question": "question b.c.2",
+						"answer": "answer b.c.2"
+					}
+				]
+			},
+			{
+				"type": "sub d",
+				"data": [
+					{
+						"question": "question b.d.1",
+						"answer": "answer b.d.1"
+					},
+					{
+						"question": "question b.d.2",
+						"answer": "answer b.d.2"
+					}
+				]
+			}
+		]
+	},
+	{
+		"fileName": "too much subs",
+		"dictionary": [
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			},
+			{
+				"type": "type",
+				"data": [{
+					"question": "question",
+					"answer": "answer"
+				}]
+			}
+		]
+	}
+]
