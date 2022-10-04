@@ -3,7 +3,9 @@ export default class extends HTMLElement {
 		super()
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
-			<div></div>
+			<div>
+				<slot name="0"></slot>
+			</div>
 			<style>
 				div {
 					color: #fff;
@@ -13,8 +15,8 @@ export default class extends HTMLElement {
 			</style>
 		`
 	}
-	static observedAttributes = ["name"]
-	attributeChangedCallback(_, __, name) {
-		this.shadowRoot.querySelector("div").innerHTML = name
-	}
+// 	static observedAttributes = ["name"]
+// 	attributeChangedCallback(_, __, name) {
+// 		this.shadowRoot.querySelector("div").innerHTML = name
+// 	}
 }
