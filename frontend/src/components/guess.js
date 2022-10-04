@@ -1,4 +1,5 @@
 import data from  "/shared/dictionaryStore.js"
+import { spaMessageListener } from "/shared/SPAManager.js"
 
 export default class extends HTMLElement {
 	constructor () {
@@ -17,6 +18,9 @@ export default class extends HTMLElement {
 		`
 		this.shadowRoot.querySelector("#guess").addEventListener("input", () =>
 			alert(21)
+		)
+		this.shadowRoot.querySelector("#back").addEventListener("click", () => 
+			spaMessageListener.changeView("/")
 		)
 	}
 }

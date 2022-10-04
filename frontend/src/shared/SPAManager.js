@@ -1,8 +1,8 @@
 import { arrayContains } from "/shared/comparisonLib.js"
 
 const paths = {
-	"/": "<dictionary-picker-></dictionary-picker->",
-	"/guess": "<guess-></guess->",
+	"/": "<dictionary-picker- id='_'></dictionary-picker->",
+	"/guess": "<guess- id='_'></guess->",
 }
 
 export const spaMessageListener = new (class {
@@ -42,11 +42,19 @@ export const SpaView = class extends HTMLElement {
 	constructor () {
 		super()
 		this.attachShadow({ mode: "open" })
-		this.shadowRoot.innerHTML = "initial view..."
+		this.shadowRoot.innerHTML = `
+			<span id="_"></span>
+			<style></style>
+		`
 	}
 	static observedAttributes = ["path"]
 	attributeChangedCallback(_, oldValue, newValue) {
-		this.shadowRoot.innerHTML = paths[newValue]
+		const template = document.createElement("template")
+		template.innerHTML = paths[newValue]
+		this.shadowRoot.removeChild(
+			this.shadowRoot.querySelector("#_")
+		)
+		this.shadowRoot.append(template.content.firstChild)
 	}
 	disconnectedCallback() {
 		spaMessageListener.disconnect()
