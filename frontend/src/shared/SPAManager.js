@@ -1,4 +1,5 @@
 import { arrayContains } from "/shared/comparisonLib.js"
+import { html } from "/shared/templating.js"
 
 const paths = {
 	"/": "<dictionary-picker- id='_'></dictionary-picker->",
@@ -49,12 +50,8 @@ export const SpaView = class extends HTMLElement {
 	}
 	static observedAttributes = ["path"]
 	attributeChangedCallback(_, oldValue, newValue) {
-		const template = document.createElement("template")
-		template.innerHTML = paths[newValue]
-		this.shadowRoot.removeChild(
-			this.shadowRoot.querySelector("#_")
-		)
-		this.shadowRoot.append(template.content.firstChild)
+		this.shadowRoot.querySelector("#_")
+			.replaceWith(html`${paths[newValue]}`)
 	}
 	disconnectedCallback() {
 		spaMessageListener.disconnect()
