@@ -35,7 +35,7 @@ export const spaMessageListener = new (class {
 		.join(" | ")}
 	Got: "${viewName}"`
 		}
-		this.#viewToCall.setAttribute("path", viewName)
+		this.#viewToCall.setAttribute("data-path", viewName)
 	}
 })()
 
@@ -48,10 +48,10 @@ export const SpaView = class extends HTMLElement {
 			<style></style>
 		`
 	}
-	static observedAttributes = ["path"]
-	attributeChangedCallback(_, oldValue, newValue) {
+	static observedAttributes = ["data-path"]
+	attributeChangedCallback() {
 		this.shadowRoot.querySelector("#_")
-			.replaceWith(html`${paths[newValue]}`)
+			.replaceWith(html`${paths[this.dataset.path]}`)
 	}
 	disconnectedCallback() {
 		spaMessageListener.disconnect()
