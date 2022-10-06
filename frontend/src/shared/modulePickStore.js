@@ -3,10 +3,10 @@ const values = data.getHeaders()
 export default {
 	values,
 	addModule(path) {
-		if (this.values[path[0]].indexOf(path[1]) == -1) {
-			this.values[path[0]].push(path[1])
+		let valueUnderKey = this.values[path[0]] ?? []
+		if (valueUnderKey.indexOf(path[1]) == -1) {
+			this.values[path[0]] = valueUnderKey.concat(path[1])
 		}
-		console.log(JSON.stringify(this.values))
 	},
 	removeModule(path) {
 		const indexOfPath = this.values[path[0]].indexOf(path[1])
@@ -14,6 +14,9 @@ export default {
 			indexOfPath,
 			indexOfPath != -1 ? 1 : 0
 		)
-		console.log(JSON.stringify(this.values))
+		if (this.values[path[0]]?.length < 1) {
+			let {[path[0]]: _, ...values} = this.values
+			this.values = values
+		}
 	},
 }

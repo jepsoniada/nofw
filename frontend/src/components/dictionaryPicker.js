@@ -27,10 +27,8 @@ export default class extends HTMLElement {
 					display: flex;
 					flex-direction: column;
 					gap: 16px;
-					margin: 16px 0;
 				}
 				#start {
-					width: min-content;
 					margin: 0 0 0 auto
 				}
 				.picker {
@@ -41,12 +39,6 @@ data:image/svg+xml,%3Csvg%20width%3D%2292%22%20height%3D%2212%22%20viewBox%3D%22
 			</style>
 		`
 		this.shadowRoot.querySelector("#start").addEventListener("click", _ => {
-// 			console.log(data.getFilteredValues(Object.entries(pickStore.values)))
-
-// 			spaMessageListener.exec(view => {
-// 				view.setAttribute("path", "/guess")
-// 			})
-
 			spaMessageListener.changeView("/guess")
 		})
 	}

@@ -12,11 +12,11 @@ export default class extends HTMLElement {
 					background: #000;
 					padding: 12px 18px;
 				}
+				:host {
+					display: block;
+					width: min-content;
+				}
 			</style>
 		`
 	}
-// 	static observedAttributes = ["name"]
-// 	attributeChangedCallback(_, __, name) {
-// 		this.shadowRoot.querySelector("div").innerHTML = name
-// 	}
 }
