@@ -1,4 +1,4 @@
-import Guess from "/components/guess.js"
+import { Guess } from "/components/guess.js"
 import DictionaryPicker from "/components/dictionaryPicker.js"
 import { SpaView } from "/shared/SPAManager.js"
 import DictionaryCheckBox from "/components/dictionaryCheckBox.js"

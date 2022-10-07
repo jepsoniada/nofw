@@ -44,7 +44,7 @@ export const SpaView = class extends HTMLElement {
 		super()
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
-			<span id="_"></span>
+			<span style="display: none" id="_"></span>
 			<style></style>
 		`
 	}

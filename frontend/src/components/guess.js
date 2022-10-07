@@ -1,30 +1,47 @@
-import data from  "/shared/dictionaryStore.js"
+import store from  "/shared/dictionaryStore.js"
 import { default as filtersRef } from "/shared/modulePickStore.js"
 import { spaMessageListener } from "/shared/SPAManager.js"
 
-export default class extends HTMLElement {
+export const guessStore = {
+	answerCorrectness: [],
+}
+
+export class Guess extends HTMLElement {
 	constructor () {
 		super()
 		this.attachShadow({ mode: "open" })
 		this.qaDataIterator =
-			data.getFilteredValues(Object.entries(filtersRef.values))[Symbol.iterator]()
-		let asdf = this.qaDataIterator.next()
+			store.rawQuestionAnswerTouples(
+				store.getFilteredValues(
+					Object.entries(filtersRef.values)
+				)
+			)
+			[Symbol.iterator]()
+		let question = this.qaDataIterator.next()
+		this.currentQuestion = question
 		this.shadowRoot.innerHTML = `
 			<div class="guess">
 				<button- id="back"><span slot="0">&lt;</span></button->
 				<div id="content">
 					<h3 id="question">${
-						asdf.done ? '' : asdf.value.dictionary[0].data[0].question
+						question.done ? '' : question.value.question
 					}</h3>
 					<input id="guess-input">
-					<span id="answer">${
-						asdf.done ? '' : asdf.value.dictionary[0].data[0].answer
-					}</span>
+					<!--
+						<span id="answer">${
+							question.done ? '' : question.value.answer
+						}</span>
+					-->
+					<span style="display:none" id="next"></span>
+					<!-- <button- id="next"><span slot="0">next</span></button-> -->
 				</div>
 			</div>
 			<style>
 				#back {
 					margin: 0 auto 0 0;
+				}
+				#next {
+					margin: 0 0 0 auto
 				}
 				.guess {
 					display: flex;
@@ -49,8 +66,8 @@ export default class extends HTMLElement {
 	qsDataNext() {
 		const cart = this.qaDataIterator.next()
 		this.shadowRoot.querySelector("#question").textContent =
-			cart.done ? '' : cart.value.dictionary[0].data[0].question
+			cart.done ? '' : cart.value.question
 		this.shadowRoot.querySelector("#answer").textContent =
-			cart.done ? '' : cart.value.dictionary[0].data[0].answer
+			cart.done ? '' : cart.value.answer
 	}
 }

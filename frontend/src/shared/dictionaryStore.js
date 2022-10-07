@@ -1,14 +1,8 @@
 const values = await (await fetch("/api/dictionaries")).json()
 const store = {
 	values,
-	filters: [], // [ {dictionary: "", modules: [""]} ]
+	filters: [], // [ "dictionary", ["module"] ]
 	getHeaders() {
-// 		return this.values.map(dictionary => ({
-// 			name: dictionary.fileName,
-// 			modules: dictionary.dictionary.map(
-// 				sub => sub.type
-// 			),
-// 		}))
 		return Object.fromEntries(
 			this.values
 				.map(dictionary => [
@@ -41,6 +35,15 @@ const store = {
 						)
 					)
 			}))
-	}
+	},
+	rawQuestionAnswerTouples(from) {
+		return from
+			.map(dictionary =>
+				dictionary.dictionary
+					.map(module => module.data)
+					.flat()
+			)
+			.flat()
+	},
 }
 export default store
