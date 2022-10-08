@@ -6,11 +6,17 @@ import { html } from "/shared/templating.js"
 export const guessStore = {
 	answerCorrectness: [],
 	length: 0,
+	reset() {
+		this.answerCorrectness = []
+		this.length = 0
+		return this
+	}
 }
 
 export class Guess extends HTMLElement {
 	constructor () {
 		super()
+		guessStore.reset()
 		this.attachShadow({ mode: "open" })
 		let qaData =
 			store.rawQuestionAnswerTouples(
@@ -60,7 +66,7 @@ export class Guess extends HTMLElement {
 			}
 		})
 		this.shadowRoot.querySelector("#back").addEventListener("click",
-			() => spaMessageListener.changeView("/")
+			_ => spaMessageListener.changeView("/")
 		)
 	}
 	#answered = false
@@ -80,15 +86,18 @@ export class Guess extends HTMLElement {
 			)
 		if (this.answered) {
 			this.shadowRoot.querySelector("#next").addEventListener("click",
-				() => this.qaDataNext()
+				_ => {
+					if (guessStore.answerCorrectness.length > guessStore.length - 1) {
+						this.goToResults()
+						return
+					}
+					this.qaDataNext()
+				}
 			)
 		}
 	}
 	answerCorrectnessMaskPerWord = []
 	answerStates = {
-// 		true: () => `<span id="answer">${
-// 			this.currentQuestion.value?.answer
-// 		}</span>`,
 		true: () => `<span id="answer">${
 			this.answerCorrectnessMaskPerWord
 				.map((a, index) => {
@@ -101,14 +110,20 @@ export class Guess extends HTMLElement {
 	}
 	nextStates = {
 		true: () =>
-			`<button- id="next"><span slot="0">next</span></button->`,
+			`<button- id="next"><span slot="0">${
+				guessStore.answerCorrectness.length > guessStore.length - 1
+					? "finish"
+					: "next"
+			}</span></button->`,
 		false: () => `<span style="display:none" id="next"></span>`,
 	}
 	checkAnswer() {
 		const value = this.shadowRoot.querySelector("#guess-input").value.split(' ')
-		const answer = this.currentQuestion.value?.answer.split(' ')
+		const answer = this.currentQuestion.value?.answer.split(' ') ?? []
 		this.answerCorrectnessMaskPerWord = answer
 			.map((word, index) => word == value[index])
+		const isCorrect = this.answerCorrectnessMaskPerWord.reduce((acc, a) => acc && a)
+		guessStore.answerCorrectness.push(isCorrect)
 		this.answered = true
 	}
 	qaDataNext() {
@@ -118,5 +133,10 @@ export class Guess extends HTMLElement {
 		this.shadowRoot.querySelector("#question").textContent =
 			current.value?.question ?? ''
 		this.shadowRoot.querySelector("#guess-input").value = ''
+	}
+	goToResults () {
+		this.replaceWith(
+			html`<results- id="_"></results->`
+		)
 	}
 }
