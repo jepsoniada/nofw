@@ -51,7 +51,8 @@ export default class extends HTMLElement {
 					`).join('')
 				Array.from(this.shadowRoot.querySelectorAll("input[type='checkbox']"))
 					.forEach(input => {
-						input.checked = pickStore.values[metadata[0]].indexOf(input.name) != -1 ? true : false
+						let foundInput = pickStore.values[metadata[0]]?.indexOf(input.name) ?? -1
+						input.checked = foundInput != -1 ? true : false
 						input.addEventListener("change", function (event) {
 							this.checked
 								? pickStore.addModule([metadata[0], input.name])

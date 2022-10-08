@@ -5,22 +5,22 @@ import { html } from "/shared/templating.js"
 
 export const guessStore = {
 	answerCorrectness: [],
+	length: 0,
 }
 
 export class Guess extends HTMLElement {
 	constructor () {
 		super()
 		this.attachShadow({ mode: "open" })
-		this.qaDataIterator =
+		let qaData =
 			store.rawQuestionAnswerTouples(
 				store.getFilteredValues(
 					Object.entries(filtersRef.values)
 				)
 			)
-			[Symbol.iterator]()
-		let question = this.qaDataIterator.next()
-		this.currentQuestion = question
-		try {
+		guessStore.length = qaData.length
+		this.qaDataIterator = qaData[Symbol.iterator]()
+		let question = (this.currentQuestion = this.qaDataIterator.next())
 		this.shadowRoot.innerHTML = `
 			<div class="guess">
 				<button- id="back"><span slot="0">&lt;</span></button->
@@ -29,10 +29,8 @@ export class Guess extends HTMLElement {
 						question.done ? '' : question.value.question
 					}</h3>
 					<input id="guess-input">
-					<!--
-					${this.answerStates[this.answered]}
-					${this.nextStates[this.answered]}
-					-->
+					${this.answerStates[this.answered]()}
+					${this.nextStates[this.answered]()}
 				</div>
 			</div>
 			<style>
@@ -51,28 +49,53 @@ export class Guess extends HTMLElement {
 				#content {
 					width: min-content;
 				}
+				.wrong {
+					color: #f00;
+				}
 			</style>
 		`
-		} catch(e) {
-			alert(e)
-		}
 		this.shadowRoot.querySelector("#guess-input").addEventListener("keyup", (event) => {
 			if (event.key == "Enter") {
 				this.checkAnswer()
-// 				this.qsDataNext()
 			}
 		})
-		this.shadowRoot.querySelector("#next").addEventListener("click",
-			() => this.qsDataNext()
-		)
 		this.shadowRoot.querySelector("#back").addEventListener("click",
 			() => spaMessageListener.changeView("/")
 		)
 	}
-	answered = false
+	#answered = false
+	get answered () { return this.#answered }
+	set answered (value) {
+		if (this.answered == value) {
+			return
+		}
+		this.#answered = value
+		this.shadowRoot.querySelector("#answer")
+			.replaceWith(
+				html`${this.answerStates[this.answered]()}`
+			)
+		this.shadowRoot.querySelector("#next")
+			.replaceWith(
+				html`${this.nextStates[this.answered]()}`
+			)
+		if (this.answered) {
+			this.shadowRoot.querySelector("#next").addEventListener("click",
+				() => this.qaDataNext()
+			)
+		}
+	}
+	answerCorrectnessMaskPerWord = []
 	answerStates = {
+// 		true: () => `<span id="answer">${
+// 			this.currentQuestion.value?.answer
+// 		}</span>`,
 		true: () => `<span id="answer">${
-			this.currentQuestion.value
+			this.answerCorrectnessMaskPerWord
+				.map((a, index) => {
+					let answer = this.currentQuestion.value?.answer.split(' ')
+					return `<span ${a ? '' : `class="wrong"`}>${answer[index]}</span>`
+				})
+				.join(' ')
 		}</span>`,
 		false: () => `<span style="display:none" id="answer"></span>`,
 	}
@@ -82,27 +105,18 @@ export class Guess extends HTMLElement {
 		false: () => `<span style="display:none" id="next"></span>`,
 	}
 	checkAnswer() {
+		const value = this.shadowRoot.querySelector("#guess-input").value.split(' ')
+		const answer = this.currentQuestion.value?.answer.split(' ')
+		this.answerCorrectnessMaskPerWord = answer
+			.map((word, index) => word == value[index])
 		this.answered = true
-		this.shadowRoot.querySelector("#answer")
-			.replaceWith(
-				html`${this.answerStates[this.answered]}`
-			)
-		this.shadowRoot.querySelector("#next")
-			.replaceWith(
-				html`${this.nextStates[this.answered]}`
-			)
 	}
-	qsDataNext() {
+	qaDataNext() {
+		this.answered = false
 		const current =
 			(this.currentQuestion = this.qaDataIterator.next())
-		if (current.done) {
-// 			some spa view i guess
-		}
 		this.shadowRoot.querySelector("#question").textContent =
-// 			cart.done ? '' : cart.value.question
 			current.value?.question ?? ''
-		this.shadowRoot.querySelector("#answer").textContent =
-// 			cart.done ? '' : cart.value.answer
-			current.value?.answer ?? ''
+		this.shadowRoot.querySelector("#guess-input").value = ''
 	}
 }
