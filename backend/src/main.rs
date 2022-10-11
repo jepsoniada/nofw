@@ -43,16 +43,16 @@ fn handle_req (mut stream: TcpStream) {
         .name("path").unwrap()
         .as_str();
     println!("accessed path {}", path);
-	let statics: Vec<String> = dir_traverse("linkFiles").iter()
+	let statics: Vec<String> = dir_traverse("static").iter()
 		.map(|a| a
 			.clone().into_os_string().into_string().unwrap()
-			.strip_prefix("linkFiles/").unwrap()
+			.strip_prefix("static/").unwrap()
 			.to_string()
 		)
 		.collect();
     match path {
         "/" => {
-            let file_name = "linkFiles/index.html";
+            let file_name = "static/index.html";
             stream.write(
                 http::response_builder(
                     http::CODES.iter().find(|a| a.0 == 200).unwrap(),
@@ -92,7 +92,7 @@ fn handle_req (mut stream: TcpStream) {
             ).unwrap();
         },
         e if statics.contains(&(e.strip_prefix("/").unwrap()).to_string()) => {
-            let file_name = format!("linkFiles/{}", e);
+            let file_name = format!("static/{}", e);
             let file_name = file_name.as_str();
             stream.write(
                 http::response_builder(

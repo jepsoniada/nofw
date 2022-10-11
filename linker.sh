@@ -10,8 +10,8 @@ done
 
 # echo $filelist
 
-rm -f backend/linkFiles/*
-mkdir backend/linkFiles
+rm -f backend/static/*
+mkdir backend/static
 for file in $filelist; do
-	ln -s ~/nofw/frontend/src/$file backend/linkFiles/$file
+	ln -s ~/nofw/frontend/src/$file backend/static/$file
 done

@@ -1,222 +1,531 @@
 [
 	{
-		"fileName": "some dictionary name",
+		"fileName": "1.1 Erinnerungen bleiben",
 		"dictionary": [
 			{
-				"type": "sub a",
+				"type": "epxresions",
 				"data": [
 					{
-						"question": "question a.a.1",
-						"answer": "answer a.a.1"
+						"question": "na Mazurach",
+						"answer": "in den Masuren"
 					},
 					{
-						"question": "question a.a.2",
-						"answer": "answer a.a.2"
+						"question": "w Tatrach",
+						"answer": "in der Tatra"
+					},
+					{
+						"question": "w Alpach",
+						"answer": "in den Alpen"
+					},
+					{
+						"question": "w górach",
+						"answer": "im Gebirge"
+					},
+					{
+						"question": "nad Adriatykiem",
+						"answer": "an der Adria"
+					},
+					{
+						"question": "nad Bałtykiem",
+						"answer": "an der Ostsee"
+					},
+					{
+						"question": "nad Morzem Północnym",
+						"answer": "an der Nordsee"
+					},
+					{
+						"question": "nad Morzem śródziemnym",
+						"answer": "am Mittelmeer"
+					},
+					{
+						"question": "nad jeziorem",
+						"answer": "an einem See"
+					},
+					{
+						"question": "nad Jeziorem Bodeńskim",
+						"answer": "am Bodensee"
+					},
+					{
+						"question": "w Grecji",
+						"answer": "in Griechenland"
+					},
+					{
+						"question": "we Włoszech",
+						"answer": "in Italien"
+					},
+					{
+						"question": "w Pirenejach",
+						"answer": "in den Pyrenäen"
+					},
+					{
+						"question": "w Sudetach",
+						"answer": "in den Sudeten"
+					},
+					{
+						"question": "w Szwajcarii",
+						"answer": "in der Schweiz"
+					},
+					{
+						"question": "w Turcji",
+						"answer": "in der Türkei"
+					},
+					{
+						"question": "na Korfu",
+						"answer": "auf Korfu"
+					},
+					{
+						"question": "na Uznamie",
+						"answer": "auf Usedom"
+					},
+					{
+						"question": "na Majore",
+						"answer": "auf Mallorca"
+					},
+					{
+						"question": "na Ibizie",
+						"answer": "auf Ibiza"
 					}
 				]
 			},
 			{
-				"type": "sub b",
+				"type": "verbs",
 				"data": [
 					{
-						"question": "question a.b.1",
-						"answer": "answer a.b.1"
+						"question": "wysyłać",
+						"answer": "abschicken"
 					},
 					{
-						"question": "question a.b.2",
-						"answer": "answer a.b.2"
+						"question": "pracować",
+						"answer": "arbeiten"
+					},
+					{
+						"question": "kąpać się",
+						"answer": "baden"
+					},
+					{
+						"question": "odpowiadać na coś",
+						"answer": "beantworten etw."
+					},
+					{
+						"question": "zwiedzać",
+						"answer": "besichtigen"
+					},
+					{
+						"question": "oglądać telewizję",
+						"answer": "fernsehen"
+					},
+					{
+						"question": "fotografować",
+						"answer": "fotografieren"
+					},
+					{
+						"question": "grillować",
+						"answer": "grillen"
+					},
+					{
+						"question": "procować",
+						"answer": "jobben"
+					},
+					{
+						"question": "uprawiać jogging",
+						"answer": "joggen"
+					},
+					{
+						"question": "wspinać się",
+						"answer": "klettern"
+					},
+					{
+						"question": "czytać",
+						"answer": "lesen"
+					},
+					{
+						"question": "jeździć konno",
+						"answer": "reiten"
+					},
+					{
+						"question": "pływać",
+						"answer": "schwimmen"
+					},
+					{
+						"question": "żeglować",
+						"answer": "segeln"
+					},
+					{
+						"question": "opalać się",
+						"answer": "sich sonnen"
+					},
+					{
+						"question": "surfować",
+						"answer": "surfen"
+					},
+					{
+						"question": "tańczyć",
+						"answer": "tanzen"
+					},
+					{
+						"question": "nurkować",
+						"answer": "tauchen"
+					},
+					{
+						"question": "wędrować",
+						"answer": "wandern"
+					},
+					{
+						"question": "spędzać (czas)",
+						"answer": "verbringen"
+					},
+					{
+						"question": "zarabiać",
+						"answer": "verdienen"
+					},
+					{
+						"question": "przemijać, kończyć się",
+						"answer": "vorbei sein"
+					}
+				]
+			},
+			{
+				"type": "sentences",
+				"data": [
+					{
+						"question": "odpowiadać na oferty",
+						"answer": "Anfragen beantworten"
+					},
+					{
+						"question": "szukać pracy wakacujnej",
+						"answer": "einen Ferienjob suchen"
+					},
+					{
+						"question":  "wyjeżdżać z przyjaciółmi",
+						"answer": "mit Freunder verreisen"
+					},
+					{
+						"question": "inkasować pieniądze",
+						"answer": "Geld kassieren"
+					},
+					{
+						"question": "obsługiwać kasę",
+						"answer": "die Kasse bedienen"
+					},
+					{
+						"question": "robić rezerwacje",
+						"answer": "Reservierunge machen"
+					},
+					{
+						"question": "jeżdzić na nartach wodnych",
+						"answer": "Wasserski fahren"
+					}
+				]
+			},
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"question": "zapytanie, oferta",
+						"answer": "die Anfrage"
+					},
+					{
+						"question": "pocztówka",
+						"answer": "die Postkarte"
+					},
+					{
+						"question": "pogoda plażowa",
+						"answer": "das Strandwetter"
+					},
+					{
+						"question": "wiatr",
+						"answer": "der Wind"
 					}
 				]
 			}
 		]
 	},
 	{
-		"fileName": "secound dict",
+		"fileName": "1.2 Ohne Fleiß kein Preis",
 		"dictionary": [
 			{
-				"type": "sub c",
+				"type": "nouns",
 				"data": [
 					{
-						"question": "question b.c.1",
-						"answer": "answer b.c.1"
+						"question": "dzień pracy",
+						"answer": "der Arbeitstag"
 					},
 					{
-						"question": "question b.c.2",
-						"answer": "answer b.c.2"
+						"question": "zadanie",
+						"answer": "die Afugabe"
+					},
+					{
+						"question": "płaca, wynagrodzenie",
+						"answer": "die Bezahlung"
+					},
+					{
+						"question": "lista zakupów",
+						"answer": "die Einkaufsliste"
+					},
+					{
+						"question": "praca wakacyjna",
+						"answer": "der Ferienjob"
+					},
+					{
+						"question": "mięso",
+						"answer": "das Fleisch"
+					},
+					{
+						"question": "warzywa",
+						"answer": "das Gemüse"
+					},
+					{
+						"question": "targ",
+						"answer": "der Großmarkt"
+					},
+					{
+						"question": "stołówka",
+						"answer": "die Kantine"
+					},
+					{
+						"question": "pomoc kuchenna",
+						"answer": "die Küchenhilfe"
+					},
+					{
+						"question": "kurtka",
+						"answer": "die Jacke"
+					},
+					{
+						"question": "praca",
+						"answer": "der Job"
+					},
+					{
+						"question": "oferta pracy",
+						"answer": "das Jobangebot"
+					},
+					{
+						"question": "współpracownik",
+						"answer": "der Mitarbeiter"
+					},
+					{
+						"question": "wada",
+						"answer": "der Nachteil"
+					},
+					{
+						"question": "deser",
+						"answer": "der Nachtisch"
+					},
+					{
+						"question": "owoce",
+						"answer": "das Obst"
+					},
+					{
+						"question": "sałatka",
+						"answer": "der Salat"
+					},
+					{
+						"question": "zaleta",
+						"answer": "der Vorteil"
 					}
 				]
 			},
 			{
-				"type": "sub d",
+				"type": "verbs",
 				"data": [
 					{
-						"question": "question b.d.1",
-						"answer": "answer b.d.1"
+						"question": "przymierzać",
+						"answer": "anprobieren"
 					},
 					{
-						"question": "question b.d.2",
-						"answer": "answer b.d.2"
+						"question": "wydawać",
+						"answer": "ausgeben"
+					},
+					{
+						"question": "znać się na czymś",
+						"answer": "sich auskennen in"
+					},
+					{
+						"question": "towarzyszyć",
+						"answer": "begleiten"
+					},
+					{
+						"question": "zamawiać",
+						"answer": "bestellen"
+					},
+					{
+						"question": "ubiegać się o coś",
+						"answer": "sich bewerben um etw."
+					},
+					{
+						"question": "trwać",
+						"answer": "dauern"
+					},
+					{
+						"question": "kupować",
+						"answer": "einkaufen"
+					},
+					{
+						"question": "podobać się",
+						"answer": "gefallen"
+					},
+					{
+						"question": "gotować",
+						"answer": "kochen"
+					},
+					{
+						"question": "kosztować",
+						"answer": "kosten"
+					},
+					{
+						"question": "pasować",
+						"answer": "passen"
+					},
+					{
+						"question": "kroić",
+						"answer": "schneiden"
+					},
+					{
+						"question": "stawiać na coś",
+						"answer": "setzen auf etw."
+					},
+					{
+						"question": "proponować",
+						"answer": "vorschlagen"
+					},
+					{
+						"question": "myć",
+						"answer": "waschen"
+					},
+					{
+						"question": "przygotowywać",
+						"answer": "zubereiten"
 					}
 				]
-			}
-		]
-	},
-	{
-		"fileName": "too much subs",
-		"dictionary": [
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
 			},
 			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
+				"type": "adjectives",
+				"data": [
+					{
+						"question": "męczący",
+						"answer": "anstrengend"
+					},
+					{
+						"question": "niebieski",
+						"answer": "blau"
+					},
+					{
+						"question": "brązowy",
+						"answer": "braun"
+					},
+					{
+						"question": "kolorowy",
+						"answer": "bunt"
+					},
+					{
+						"question": "zaangażowany",
+						"answer": "engagiert"
+					},
+					{
+						"question": "poszukiwany",
+						"answer": "gefragt"
+					},
+					{
+						"question": "żółty",
+						"answer": "gelb"
+					},
+					{
+						"question": "przyjemny, przytulny",
+						"answer": "gemütlich"
+					},
+					{
+						"question": "w kropki",
+						"answer": "gepunktet"
+					},
+					{
+						"question": "w paski",
+						"answer": "gestreift"
+					},
+					{
+						"question": "szary",
+						"answer": "grau"
+					},
+					{
+						"question": "zielony",
+						"answer": "grün"
+					},
+					{
+						"question": "dobrze płatny",
+						"answer": "gut bezahlt"
+					},
+					{
+						"question": "jasnobrązowy",
+						"answer": "hellbraun"
+					},
+					{
+						"question": "skonany",
+						"answer": "hundemüde"
+					},
+					{
+						"question": "twórczy",
+						"answer": "kreativ"
+					},
+					{
+						"question": "monotonny",
+						"answer": "monoton"
+					},
+					{
+						"question": "czerwony",
+						"answer": "rot"
+					},
+					{
+						"question": "czarny",
+						"answer": "schwarz"
+					},
+					{
+						"question": "nieskomplikowany",
+						"answer": "unkompliziert"
+					},
+					{
+						"question": "odpowiedzialny",
+						"answer": "verantwortungsvoll"
+					},
+					{
+						"question": "fioletowy",
+						"answer": "violett"
+					},
+					{
+						"question": "biały",
+						"answer": "weiß"
+					},
+					{
+						"question": "dodatkowy",
+						"answer": "zusätzlich"
+					},
+					{
+						"question": "niezawodny",
+						"answer": "zuverlässig"
+					}
+				]
 			},
 			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
-			},
-			{
-				"type": "type",
-				"data": [{
-					"question": "question",
-					"answer": "answer"
-				}]
+				"type": "sentences",
+				"data": [
+					{
+						"question": "sukać pomocnika",
+						"answer": "eine Aushilfe suchen"
+					},
+					{
+						"question": "mieć szansę",
+						"answer": "eine Chance haben"
+					},
+					{
+						"question": "oczyszczać twarz",
+						"answer": "das Gesicht ausreinigen"
+					},
+					{
+						"question": "robić maseczkę na twarz",
+						"answer": "eine Gesichtsmaske machen"
+					},
+					{
+						"question": "dostawać napiwek",
+						"answer": "Trinkgeld bekommen"
+					}
+				]
 			}
 		]
 	}
