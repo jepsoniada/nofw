@@ -1,6 +1,6 @@
-import { guessStore } from "/components/guess.js"
-import { spaMessageListener } from "/shared/SPAManager.js"
-import { html } from "/shared/templating.js"
+import { guessStore } from "/static/components/guess.js"
+import { spaMessageListener } from "/static/shared/SPAManager.js"
+import { html } from "/static/shared/templating.js"
 
 export class Results extends HTMLElement {
 	constructor () {

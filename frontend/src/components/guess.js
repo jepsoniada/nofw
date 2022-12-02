@@ -1,7 +1,7 @@
-import store from  "/shared/dictionaryStore.js"
-import { default as filtersRef } from "/shared/modulePickStore.js"
-import { spaMessageListener } from "/shared/SPAManager.js"
-import { html } from "/shared/templating.js"
+import store from  "/static/shared/dictionaryStore.js"
+import { default as filtersRef } from "/static/shared/modulePickStore.js"
+import { spaMessageListener } from "/static/shared/SPAManager.js"
+import { html } from "/static/shared/templating.js"
 
 export const guessStore = {
 	answerCorrectness: [],

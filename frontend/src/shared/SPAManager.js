@@ -1,5 +1,5 @@
-import { arrayContains } from "/shared/comparisonLib.js"
-import { html } from "/shared/templating.js"
+import { arrayContains } from "/static/shared/comparisonLib.js"
+import { html } from "/static/shared/templating.js"
 
 const paths = {
 	"/": "<dictionary-picker- id='_'></dictionary-picker->",

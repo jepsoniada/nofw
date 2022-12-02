@@ -1,4 +1,4 @@
-import data from "/shared/dictionaryStore.js"
+import data from "/static/shared/dictionaryStore.js"
 const values = data.getHeaders()
 export default {
 	values,

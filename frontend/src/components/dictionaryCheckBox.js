@@ -1,4 +1,4 @@
-import pickStore from "/shared/modulePickStore.js"
+import pickStore from "/static/shared/modulePickStore.js"
 
 export default class extends HTMLElement {
 	constructor () {

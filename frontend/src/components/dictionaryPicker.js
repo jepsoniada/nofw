@@ -1,6 +1,6 @@
-import data from  "/shared/dictionaryStore.js"
-import pickStore from "/shared/modulePickStore.js"
-import { spaMessageListener } from "/shared/SPAManager.js"
+import data from  "/static/shared/dictionaryStore.js"
+import pickStore from "/static/shared/modulePickStore.js"
+import { spaMessageListener } from "/static/shared/SPAManager.js"
 
 export default class extends HTMLElement {
 	constructor () {
