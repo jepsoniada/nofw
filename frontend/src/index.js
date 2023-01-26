@@ -1,5 +1,5 @@
 import { Guess } from "/static/components/guess.js"
-import DictionaryPicker from "/static/components/dictionaryPicker.js"
+import { DictionaryPicker } from "/static/components/dictionaryPicker.js"
 import { SpaView } from "/static/shared/SPAManager.js"
 import DictionaryCheckBox from "/static/components/dictionaryCheckBox.js"
 import { Results } from "/static/components/results.js"
