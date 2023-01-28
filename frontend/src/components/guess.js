@@ -30,7 +30,7 @@ export class Guess extends HTMLElement {
 		this.shadowRoot.innerHTML = `
 			<div id="counter">1/${guessStore.length}</div>
 			<div class="guess">
-				<button- id="back"><span slot="0">&lt;</span></button->
+				<input- data-type="button" id="back"><span>&lt;</span></input->
 				<div id="content">
 					<h3 id="question">${
 						question.done ? '' : question.value.question
@@ -54,7 +54,7 @@ export class Guess extends HTMLElement {
 					margin: 0 0 0 auto
 				}
 				.guess {
-					position: absolute;
+					position: relative;
 					inset: 0;
 					display: flex;
 					gap: 16px;
@@ -74,7 +74,7 @@ export class Guess extends HTMLElement {
 				this.checkAnswer()
 			}
 		})
-		this.shadowRoot.querySelector("#back").addEventListener("click",
+		this.shadowRoot.querySelector("#back").addEventListener("input",
 			_ => spaMessageListener.changeView("/")
 		)
 	}
@@ -119,11 +119,11 @@ export class Guess extends HTMLElement {
 	}
 	nextStates = {
 		true: () =>
-			`<button- id="next"><span slot="0">${
+			`<input- data-type="button" id="next"><span>${
 				guessStore.answerCorrectness.length > guessStore.length - 1
 					? "finish"
 					: "next"
-			}</span></button->`,
+			}</span></input->`,
 		false: () => `<span style="display:none" id="next"></span>`,
 	}
 	checkAnswer() {

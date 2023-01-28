@@ -11,3 +11,6 @@ customElements.define("spa-view-", SpaView)
 customElements.define("check-box-", DictionaryCheckBox)
 customElements.define("results-", Results)
 customElements.define("button-", Button)
+
+import { Input } from "/static/shared/input.js"
+customElements.define("input-", Input)

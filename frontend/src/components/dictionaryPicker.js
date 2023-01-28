@@ -18,9 +18,9 @@ export class DictionaryPicker extends HTMLElement {
 						></check-box-> 
 					`).join('')}
 				</div>
-				<button- id="start" name="start">
-					<span slot="0">start</span>
-				</button->
+				<input- id="start" data-type="button">
+					start
+				</input->
 			</div>
 			<style>
 				.picker {
@@ -47,7 +47,7 @@ export class DictionaryPicker extends HTMLElement {
 				}
 			</style>
 		`
-		this.shadowRoot.querySelector("#start").addEventListener("click", _ => {
+		this.shadowRoot.querySelector("#start").addEventListener("input", _ => {
 			spaMessageListener.changeView("/guess")
 		})
 	}
