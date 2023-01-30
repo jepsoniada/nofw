@@ -87,6 +87,7 @@ export class Input extends HTMLElement {
 				}
 				.text {
 					min-width: 100px;
+					white-space: nowrap;
 				}
 				.text:before {
 					content: "▌";
@@ -100,7 +101,12 @@ export class Input extends HTMLElement {
 			actions: _ => {
 				const text = this.shadowRoot.querySelector(".text")
 				text.addEventListener("input", function () {
-					this.classList.toggle("inserted")
+// 					this.classList.toggle("inserted")
+					if (this.textContent != "") {
+						this.classList.add("inserted")
+					} else {
+						this.classList.remove("inserted")
+					}
 				})
 				text.addEventListener("keydown", function (pressed) {
 					if (pressed.key == "Enter") {
