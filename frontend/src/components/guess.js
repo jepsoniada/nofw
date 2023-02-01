@@ -72,11 +72,6 @@ export class Guess extends HTMLElement {
 		this.shadowRoot.querySelector("#guess-input").addEventListener("send", _ => {
 			this.checkAnswer()
 		})
-// 		this.shadowRoot.querySelector("#guess-input").addEventListener("keyup", (event) => {
-// 			if (event.key == "Enter") {
-// 				this.checkAnswer()
-// 			}
-// 		})
 		this.shadowRoot.querySelector("#back").addEventListener("input",
 			_ => spaMessageListener.changeView("/")
 		)
@@ -97,7 +92,7 @@ export class Guess extends HTMLElement {
 				html`${this.nextStates[this.answered]()}`
 			)
 		if (this.answered) {
-			this.shadowRoot.querySelector("#next").addEventListener("click",
+			this.shadowRoot.querySelector("#next").addEventListener("input",
 				_ => {
 					if (guessStore.answerCorrectness.length > guessStore.length - 1) {
 						this.goToResults()

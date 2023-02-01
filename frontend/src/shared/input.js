@@ -41,12 +41,25 @@ export class Input extends HTMLElement {
 
 		this.#setups[this.type].actions()
 	}
+
+// 	value = ""
+// 	static observedAttributes = ["value"]
+// 	attributeChangedCallback(_, __, value) {
+// 		this.value = value
+// 		switch (this.type) {
+// 			case "text": {
+// 				this.shadowRoot.querySelector("#value").textContent = value
+// 				break
+// 			}
+// 		}
+// 	}
+
 	type = ""
 	#setups = {
 		button: {
 			template: _ => { return `
 				<div tabindex=0 class="button">
-					<div>
+					<div id="value">
 						${this.innerHTML}
 					</div>
 				</div>
@@ -73,7 +86,7 @@ export class Input extends HTMLElement {
 		},
 		text: {
 			template: _ => { return `
-				<div contenteditable="plaintext-only" tabindex=0 class="text"></div>
+				<div id="value" contenteditable="plaintext-only" tabindex=0 class="text"></div>
 			`},
 			style: `
 				@keyframes blink {
@@ -107,24 +120,16 @@ export class Input extends HTMLElement {
 					}
 				}
 				text.addEventListener("input", (pressed) => {
-					console.log(text.textContent)
-					this.value = text.textContent
 					if (text.textContent.includes('\n')) {
-						this.value =
-							(text.textContent = text.textContent.replace('\n', ''))
-// 						text.selectionStart =
-// 							(text.selectionEnd = this.value.length)
+						this.value = 
+							(text.textContent = text.textContent.replaceAll('\n', ''))
+
 						const select = getSelection()
 						select.selectAllChildren(text)
 						select.collapseToEnd()
 						this.dispatchEvent(new Event("send", { composed: true }))
 					}
 					updateCaret()
-					console.log(text.textContent)
-// 					if (pressed.key == "Enter") {
-// 						pressed.preventDefault()
-// 						console.log("sent")
-// 					}
 				})
 			},
 		},
