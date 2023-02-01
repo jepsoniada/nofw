@@ -1,7 +1,6 @@
 import { html } from "/static/shared/templating.js"
 import { arrayContains } from "/static/shared/comparisonLib.js"
 
-
 export class Input extends HTMLElement {
 	constructor() {
 		super()
@@ -100,19 +99,32 @@ export class Input extends HTMLElement {
 			`,
 			actions: _ => {
 				const text = this.shadowRoot.querySelector(".text")
-				text.addEventListener("input", function () {
-// 					this.classList.toggle("inserted")
-					if (this.textContent != "") {
-						this.classList.add("inserted")
+				function updateCaret () {
+					if (text.textContent != "") {
+						text.classList.add("inserted")
 					} else {
-						this.classList.remove("inserted")
+						text.classList.remove("inserted")
 					}
-				})
-				text.addEventListener("keydown", function (pressed) {
-					if (pressed.key == "Enter") {
-						pressed.preventDefault()
-						console.log("sent")
+				}
+				text.addEventListener("input", (pressed) => {
+					console.log(text.textContent)
+					this.value = text.textContent
+					if (text.textContent.includes('\n')) {
+						this.value =
+							(text.textContent = text.textContent.replace('\n', ''))
+// 						text.selectionStart =
+// 							(text.selectionEnd = this.value.length)
+						const select = getSelection()
+						select.selectAllChildren(text)
+						select.collapseToEnd()
+						this.dispatchEvent(new Event("send", { composed: true }))
 					}
+					updateCaret()
+					console.log(text.textContent)
+// 					if (pressed.key == "Enter") {
+// 						pressed.preventDefault()
+// 						console.log("sent")
+// 					}
 				})
 			},
 		},

@@ -35,7 +35,7 @@ export class Guess extends HTMLElement {
 					<h3 id="question">${
 						question.done ? '' : question.value.question
 					}</h3>
-					<input id="guess-input">
+					<input- data-type="text" id="guess-input"></input->
 					${this.answerStates[this.answered]()}
 					${this.nextStates[this.answered]()}
 				</div>
@@ -69,11 +69,14 @@ export class Guess extends HTMLElement {
 				}
 			</style>
 		`
-		this.shadowRoot.querySelector("#guess-input").addEventListener("keyup", (event) => {
-			if (event.key == "Enter") {
-				this.checkAnswer()
-			}
+		this.shadowRoot.querySelector("#guess-input").addEventListener("send", _ => {
+			this.checkAnswer()
 		})
+// 		this.shadowRoot.querySelector("#guess-input").addEventListener("keyup", (event) => {
+// 			if (event.key == "Enter") {
+// 				this.checkAnswer()
+// 			}
+// 		})
 		this.shadowRoot.querySelector("#back").addEventListener("input",
 			_ => spaMessageListener.changeView("/")
 		)
