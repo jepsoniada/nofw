@@ -3,11 +3,39 @@ import pickStore from "/static/shared/modulePickStore.js"
 export default class extends HTMLElement {
 	constructor () {
 		super()
+
+		const [name, modules] = [this.dataset.name, JSON.parse(this.dataset.modules)]
+		if (!name) {
+			throw `data-name attribute have no showable content
+	Expected: string where string.length > 0
+	Got: "${name}"
+			`
+		}
+		if (!modules instanceof Array) {
+			throw `data-modules attribute doesn't provide parsable Array
+	Expected: object where object instanceof Array
+	Got: ${typeof modules}
+			`
+		}
+		if (modules.length < 1) {
+			throw `data-modules attribute after parsing is empty
+	Expected: Array where Array.length > 0
+	Got: ${modules}
+			`
+		}
+
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
 			<div>
-				<h2></h2>
-				<form></form>
+				<h2>${name}</h2>
+				<form>${
+					modules.map(a => `
+						<label>
+							<span class="module-name">${a}</span>
+							<input type="checkbox" name="${a}">
+						</label>
+					`).join('')
+				}</form>
 			</div>
 			<style>
 				form {
@@ -20,46 +48,13 @@ export default class extends HTMLElement {
 				}
 			</style>
 		`
-	}
-	static observedAttributes = ["data-name", "data-modules", "data-metadata"]
-	attributeChangedCallback(name) {
-		switch (name) {
-			case "data-name": {
-				this.shadowRoot.querySelector("h2").innerHTML = this.dataset.name
-				break
-			}
-			case "data-modules": {
-				[...this.shadowRoot.querySelector("form").children]
-					.forEach((element, index) => { 
-						element.querySelector("module-name").textContent =
-						JSON.parse(this.dataset.modules)?.[index] ?? element.name
-					})
-				break
-			}
-			case "data-metadata": {
-				const metadata = JSON.parse(this.dataset.metadata)
-				this.shadowRoot.querySelector("form").innerHTML =
-					metadata[1].map((module, index) => `
-						<label>
-							<span class="module-name">
-								${
-									JSON.parse(this.dataset.modules)?.[index] ?? module
-								}
-							</span>
-							<input type="checkbox" name="${module}">
-						</label>
-					`).join('')
-				Array.from(this.shadowRoot.querySelectorAll("input[type='checkbox']"))
-					.forEach(input => {
-						let foundInput = pickStore.values[metadata[0]]?.indexOf(input.name) ?? -1
-						input.checked = foundInput != -1 ? true : false
-						input.addEventListener("change", function (event) {
-							this.checked
-								? pickStore.addModule([metadata[0], input.name])
-								: pickStore.removeModule([metadata[0], input.name])
-						})
-					})
-			}
-		}
+		this.shadowRoot.querySelectorAll("form input").forEach(input => {
+			const checked = pickStore.values[name]?.indexOf(input.name) ?? -1
+			input.checked = checked != -1 ? true : false
+			input.addEventListener("change", _ => input.checked
+				? pickStore.addModule([name, input.name])
+				: pickStore.removeModule([name, input.name])
+			)
+		})
 	}
 }
