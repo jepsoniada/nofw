@@ -30,10 +30,9 @@ export default class extends HTMLElement {
 				<h2>${name}</h2>
 				<form>${
 					modules.map(a => `
-						<label>
-							<span class="module-name">${a}</span>
-							<input type="checkbox" name="${a}">
-						</label>
+						<input- data-type="checkbox">
+							${a}
+						</input->
 					`).join('')
 				}</form>
 			</div>
@@ -48,12 +47,12 @@ export default class extends HTMLElement {
 				}
 			</style>
 		`
-		this.shadowRoot.querySelectorAll("form input").forEach(input => {
-			const checked = pickStore.values[name]?.indexOf(input.name) ?? -1
-			input.checked = checked != -1 ? true : false
-			input.addEventListener("change", _ => input.checked
-				? pickStore.addModule([name, input.name])
-				: pickStore.removeModule([name, input.name])
+		this.shadowRoot.querySelectorAll("form input-").forEach(input => {
+			const checked = pickStore.values[name]?.indexOf(input.textContent.trim()) ?? -1
+			input.value = checked != -1 ? true : false
+			input.addEventListener("input", _ => input.value
+				? pickStore.addModule([name, input.textContent.trim()])
+				: pickStore.removeModule([name, input.textContent.trim()])
 			)
 		})
 	}

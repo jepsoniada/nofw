@@ -52,13 +52,13 @@ export class Input extends HTMLElement {
 	type = ""
 	#setups = {
 		button: {
-			template: _ => { return `
+			template: _ => `
 				<div tabindex=0 class="button">
 					<div>
 						${this.innerHTML}
 					</div>
 				</div>
-			`},
+			`,
 			style: `
 				.button div {
 					transition: all ease-in-out 0.1s
@@ -73,7 +73,6 @@ export class Input extends HTMLElement {
 				)
 				this.addEventListener("keydown", pressed => {
 					if (pressed.key == "Enter") {
-						console.log("dispatch on enter")
 						this.dispatchEvent(new Event("input", {composed: true}))
 					}
 				})
@@ -86,14 +85,14 @@ export class Input extends HTMLElement {
 			})
 		},
 		text: {
-			template: _ => { return `
+			template: _ => `
 				<div
 					contenteditable="plaintext-only"
 					spellcheck="false"
-					tabindex=0
+					tabindex="0"
 					class="text"
 				></div>
-			`},
+			`,
 			style: `
 				@keyframes blink {
 					0% {
@@ -148,6 +147,59 @@ export class Input extends HTMLElement {
 						text.classList.remove("inserted")
 					}
 				}
+			}),
+		},
+		checkbox: {
+			template: _ => `
+				<div class="checkbox" tabindex="0">
+					${this.textContent}
+					<div class="indicator"></div>
+				</div>
+			`,
+			style: `
+				:host > .checkbox {
+					background: initial;
+					color: initial;
+					padding: initial;
+				}
+				.checkbox {
+					display: flex;
+					align-items: center;
+					gap: 16px;
+				}
+				.indicator {
+					--size: 1em;
+					width: var(--size);
+					height: var(--size);
+					background: #000;
+					transition: all .1s ease-in-out;
+				}
+				.checkbox:focus-visible .indicator {
+					scale: 1.5;
+				}
+				.checked .indicator {
+					border-radius: 50%;
+				}
+			`,
+			actions: _ => {
+				const box = this.shadowRoot.querySelector(".checkbox")
+				this.addEventListener("click", _ => (
+					box.classList.toggle("checked"),
+					this.dispatchEvent(new Event("input", {composed: true}))
+				))
+				this.addEventListener("keydown", pressed => {
+					if (pressed.key == "Enter") {
+						box.classList.toggle("checked")
+						this.dispatchEvent(new Event("input", {composed: true}))
+					}
+				})
+			},
+			valueHandler: _ => ({
+				get: _ =>
+					!!this.shadowRoot.querySelector(".checked"),
+				set: value =>
+					this.shadowRoot.querySelector(".checkbox")
+						.classList[value ? "add" : "remove"]("checked"),
 			}),
 		},
 	}

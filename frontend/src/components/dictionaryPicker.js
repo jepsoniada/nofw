@@ -13,7 +13,6 @@ export class DictionaryPicker extends HTMLElement {
 					${Object.keys(headers).map(name => `
 						<check-box-
 							data-modules='${JSON.stringify(headers[name])}'
-							data-metadata='${JSON.stringify([name, headers[name]])}'
 							data-name='${name}'
 						></check-box-> 
 					`).join('')}
