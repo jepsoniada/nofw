@@ -8,7 +8,7 @@ export class Results extends HTMLElement {
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
 			<div class="resluts">
-				<button- id="back"><span slot="0">&lt;</span></button->
+				<input- data-type="button" id="back">">&lt;</input->
 				<div id="content">
 					<div id="score">
 						${
@@ -18,7 +18,9 @@ export class Results extends HTMLElement {
 							)
 						}/${guessStore.length}
 					</div>
-					<button- id="restart"><span slot="0">restart</span></button->
+					<input- data-type="button" id="restart">
+						restart
+					</input->
 				</div>
 			</div>
 			<style>

@@ -42,24 +42,19 @@ export class Input extends HTMLElement {
 		this.#setups[this.type].actions()
 	}
 
-// 	value = ""
-// 	static observedAttributes = ["value"]
-// 	attributeChangedCallback(_, __, value) {
-// 		this.value = value
-// 		switch (this.type) {
-// 			case "text": {
-// 				this.shadowRoot.querySelector("#value").textContent = value
-// 				break
-// 			}
-// 		}
-// 	}
+	get value() {
+		return this.#setups[this.type].valueHandler().get()
+	}
+	set value(value) {
+		this.#setups[this.type].valueHandler().set(value)
+	}
 
 	type = ""
 	#setups = {
 		button: {
 			template: _ => { return `
 				<div tabindex=0 class="button">
-					<div id="value">
+					<div>
 						${this.innerHTML}
 					</div>
 				</div>
@@ -83,10 +78,21 @@ export class Input extends HTMLElement {
 					}
 				})
 			},
+			valueHandler: _ => ({
+				get: _ =>
+					this.shadowRoot.querySelector(".button").textContent,
+				set: value =>
+					this.shadowRoot.querySelector(".button").textContent = value,
+			})
 		},
 		text: {
 			template: _ => { return `
-				<div id="value" contenteditable="plaintext-only" tabindex=0 class="text"></div>
+				<div
+					contenteditable="plaintext-only"
+					spellcheck="false"
+					tabindex=0
+					class="text"
+				></div>
 			`},
 			style: `
 				@keyframes blink {
@@ -121,8 +127,7 @@ export class Input extends HTMLElement {
 				}
 				text.addEventListener("input", (pressed) => {
 					if (text.textContent.includes('\n')) {
-						this.value = 
-							(text.textContent = text.textContent.replaceAll('\n', ''))
+						this.value = text.textContent.replaceAll('\n', '')
 
 						const select = getSelection()
 						select.selectAllChildren(text)
@@ -132,6 +137,18 @@ export class Input extends HTMLElement {
 					updateCaret()
 				})
 			},
+			valueHandler: _ => ({
+				get: _ => this.shadowRoot.querySelector(".text").textContent,
+				set: value => {
+					const text = this.shadowRoot.querySelector(".text")
+					text.textContent = value
+					if (text.textContent != "") {
+						text.classList.add("inserted")
+					} else {
+						text.classList.remove("inserted")
+					}
+				}
+			}),
 		},
 	}
 	#types = Object.keys(this.#setups)

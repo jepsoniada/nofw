@@ -41,6 +41,9 @@ export class Guess extends HTMLElement {
 				</div>
 			</div>
 			<style>
+				h3 {
+					margin: 0;
+				}
 				#counter {
 					position: absolute;
 					inset: 0 5% 0 auto;
@@ -63,6 +66,9 @@ export class Guess extends HTMLElement {
 				}
 				#content {
 					width: min-content;
+					display: flex;
+					flex-direction: column;
+					gap: 16px;
 				}
 				.wrong {
 					color: #f00;
