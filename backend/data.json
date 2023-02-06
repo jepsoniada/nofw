@@ -528,5 +528,576 @@
 				]
 			}
 		]
+	},
+	{
+		"fileName": "2.1 Angeln, Skaten oder Surfen",
+		"dictionary": [
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"answer": "der Basketball",
+						"question": "koszykówka"
+					},
+					{
+						"answer": "das Boxen",
+						"question": "boks"
+					},
+					{
+						"answer": "der Eiskunstlauf",
+						"question": "jazda figurowa na lodzie"
+					},
+					{
+						"answer": "der Fußball",
+						"question": "piłka nożna"
+					},
+					{
+						"answer": "das Golf",
+						"question": "golf"
+					},
+					{
+						"answer": "der Handball",
+						"question": "piłka ręczna"
+					},
+					{
+						"answer": "das Joggen",
+						"question": "bieganie"
+					},
+					{
+						"answer": "das Klettern",
+						"question": "wspinaczka"
+					},
+					{
+						"answer": "das Radfahren",
+						"question": "jazda na rowerze"
+					},
+					{
+						"answer": "das Reiten",
+						"question": "jazda konna"
+					},
+					{
+						"answer": "das Rennen",
+						"question": "wyścigi"
+					},
+					{
+						"answer": "das Schach",
+						"question": "szachy"
+					},
+					{
+						"answer": "das Schlittschuhlaufen",
+						"question": "łyżwiarstwo"
+					},
+					{
+						"answer": "das Schwimmen",
+						"question": "pływanie"
+					},
+					{
+						"answer": "das Segeln",
+						"question": "żeglarstwo"
+					},
+					{
+						"answer": "das Skaten",
+						"question": "jazda na rolkach"
+					},
+					{
+						"answer": "das Skifahren",
+						"question": "jazda na łyżwach"
+					},
+					{
+						"answer": "das Skispringen",
+						"question": "skoki narciarskie"
+					},
+					{
+						"answer": "das Surfen",
+						"question": "surfing"
+					},
+					{
+						"answer": "das Tauchen",
+						"question": "nurkowanie"
+					},
+					{
+						"answer": "das Tennis",
+						"question": "tenis"
+					},
+					{
+						"answer": "das Windsurfing",
+						"question": "windsurfing"
+					},
+					{
+						"answer": "der Volleyball",
+						"question": "siatkówka"
+					},
+					{
+						"answer": "die Ausrüstung",
+						"question": "wyposażenie, sprzęt"
+					},
+					{
+						"answer": "der Badeanzug",
+						"question": "kostium kąpielowy"
+					},
+					{
+						"answer": "die Badekappe",
+						"question": "czepek kąpielowy"
+					},
+					{
+						"answer": "der Ball",
+						"question": "piłka"
+					},
+					{
+						"answer": "der Haken",
+						"question": "hak"
+					},
+					{
+						"answer": "der Klettergurt",
+						"question": "pas do wspinaczki"
+					},
+					{
+						"answer": "der Korb",
+						"question": "kosz"
+					},
+					{
+						"answer": "der Reithelm",
+						"question": "kask do jazdy konnej"
+					},
+					{
+						"answer": "der Reitstiefel",
+						"question": "but do jazdy konnej"
+					},
+					{
+						"answer": "der Schläger",
+						"question": "kij, rakieta"
+					},
+					{
+						"answer": "der Schlittschuh",
+						"question": "łyżwa"
+					},
+					{
+						"answer": "das Seil",
+						"question": "lina"
+					},
+					{
+						"answer": "die Skibrille",
+						"question": "okulary narciarskie"
+					},
+					{
+						"answer": "das Surfbrett",
+						"question": "deska do surfowania"
+					},
+					{
+						"answer": "das Tor",
+						"question": "bramka"
+					},
+					{
+						"answer": "der Bergsport",
+						"question": "sport górski"
+					},
+					{
+						"answer": "der Denksport",
+						"question": "rozrywka umysłowa"
+					},
+					{
+						"answer": "der Extremsport",
+						"question": "sport ekstremalny"
+					},
+					{
+						"answer": "der Freizeitsport",
+						"question": "sport rekreacyjny"
+					},
+					{
+						"answer": "der Funsport",
+						"question": "fun sport"
+					},
+					{
+						"answer": "der Mannschaftssport",
+						"question": "sport zespołowy"
+					},
+					{
+						"answer": "der Sommersport",
+						"question": "sport letni"
+					},
+					{
+						"answer": "der Wassersport",
+						"question": "sport wodny"
+					},
+					{
+						"answer": "der Wintersport",
+						"question": "sport zimowy"
+					},
+					{
+						"answer": "das Gehirn",
+						"question": "mózg"
+					},
+					{
+						"answer": "der Kick",
+						"question": "kopnięcie; dreszczyk emocji"
+					},
+					{
+						"answer": "das Risiko",
+						"question": "ryzyko"
+					},
+					{
+						"answer": "der Muskel",
+						"question": "mięsień"
+					},
+					{
+						"answer": "die Partie",
+						"question": "partia, rozgrywka, runda"
+					},
+					{
+						"answer": "die Welle",
+						"question": "fala"
+					}
+				]
+			},
+			{
+				"type": "expresions",
+				"data": [
+					{
+						"answer": "auf der Eisbahn",
+						"question": "na lodowisku"
+					},
+					{
+						"answer": "im Fußballstadion",
+						"question": "na stadionie piłkarskim an"
+					},
+					{
+						"answer": "der Kletterwand",
+						"question": "na ściance wspinaczkowej"
+					},
+					{
+						"answer": "in der Reitschule",
+						"question": "w szkole jazdy konnej"
+					},
+					{
+						"answer": "auf der Rennbahn",
+						"question": "na torze wyścigowym"
+					},
+					{
+						"answer": "im Schachklub",
+						"question": "w klubie szachowym"
+					},
+					{
+						"answer": "in der Sporthalle",
+						"question": "w hali sportowej"
+					},
+					{
+						"answer": "auf dem Tennisplatz",
+						"question": "na korcie"
+					}
+				]
+			},
+			{
+				"type": "verbs",
+				"data": [
+					{
+						"answer": "abspielen",
+						"question": "rozgrywać"
+					},
+					{
+						"answer": "erkennen an etw.",
+						"question": "rozpoznać po czymś"
+					},
+					{
+						"answer": "stehen auf etw.",
+						"question": "lubić coś"
+					},
+					{
+						"answer": "schwitzen",
+						"question": "pocić się"
+					}
+				]
+			}
+		]
+	},
+	{
+		"fileName": "2.2 Die Leistung zählt",
+		"dictionary": [
+			{
+				"type": "verbs",
+				"data": [
+					{
+						"answer": "aussteigen aus etw.",
+						"question": "rezygnować z czegoś"
+					},
+					{
+						"answer": "geboren sein",
+						"question": "urodzić się"
+					},
+					{
+						"answer": "gewinnen",
+						"question": "wygrać"
+					},
+					{
+						"answer": "siegen",
+						"question": "zwyciężyć"
+					}
+				]
+			},
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"answer": "das Einzelspringen",
+						"question": "skoki indywidualne"
+					},
+					{
+						"answer": "die Europameisterschaft",
+						"question": "mistrzostwa Europy"
+					},
+					{
+						"answer": "der Fan",
+						"question": "fan, kibic"
+					},
+					{
+						"answer": "der Gokart",
+						"question": "gokart"
+					},
+					{
+						"answer": "die Goldmedaille",
+						"question": "złoty medal"
+					},
+					{
+						"answer": "der Mannschaftswettbewerb",
+						"question": "konkurs drużynowy"
+					},
+					{
+						"answer": "der Meistertitel",
+						"question": "tytuł mistrzowski"
+					},
+					{
+						"answer": "der Mittelfeldspieler",
+						"question": "środkowy napastnik"
+					},
+					{
+						"answer": "der/ das Nationalkader",
+						"question": "kadra narodowa"
+					},
+					{
+						"answer": "der Profisportler",
+						"question": "zawodowiec"
+					},
+					{
+						"answer": "die Weltmeisterschaft",
+						"question": "mistrzostwa świata"
+					},
+					{
+						"answer": "die Winterspiele",
+						"question": "igrzyska zimowe"
+					}
+				]
+			},
+			{
+				"type": "sentences",
+				"data": [
+					{
+						"answer": "unter Druck stehen",
+						"question": "być pod presją"
+					},
+					{
+						"answer": "eine Karriere als... beginnen",
+						"question": "rozpocząć karierę..."
+					},
+					{
+						"answer": "eine Karriere als... bennden",
+						"question": "zakończyć karierę..."
+					},
+					{
+						"answer": "eine Niederlage erleiden",
+						"question": "ponieść porażkę"
+					},
+					{
+						"answer": "den Organismus belasten",
+						"question": "obciążać organizm"
+					},
+					{
+						"answer": "seine Schwächen überwinden",
+						"question": "pokonywać swoje słabości"
+					},
+					{
+						"answer": "an der Spitze stehen",
+						"question": "być na szczycie"
+					},
+					{
+						"answer": "die Sportkarriere abbrechen",
+						"question": "przerwać karierę sportową"
+					},
+					{
+						"answer": "eine Stiftung gründen",
+						"question": "założyć fundację"
+					},
+					{
+						"answer": "mit Stress umgehen können",
+						"question": "umiejętnie obchodzić się ze stresem"
+					},
+					{
+						"answer": "an Turnieren teilnehmen",
+						"question": "brać udział w turniejach"
+					},
+					{
+						"answer": "zur Welt kommen",
+						"question": "przyjść na świat"
+					},
+					{
+						"answer": "den Weltcup gewinnen",
+						"question": "zdobyć puchar świata"
+					},
+					{
+						"answer": "Zwillingstöchter bekommen",
+						"question": "urodzić bliźniaczki"
+					}
+				]
+			}
+		]
+	},{
+		"fileName": "2.3 Es steht zwei zu null",
+		"dictionary": [
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"answer": "der Anfänger",
+						"question": "początkujący"
+					},
+					{
+						"answer": "der Bericht",
+						"question": "relacja, sprawozdanie"
+					},
+					{
+						"answer": "das Finale",
+						"question": "finał"
+					},
+					{
+						"answer": "der Halbmarathon",
+						"question": "półmaraton"
+					},
+					{
+						"answer": "die Halbzeit",
+						"question": "połowa meczu"
+					},
+					{
+						"answer": "der Handbiker",
+						"question": "rowerzysta jeżdżący na handbike'u"
+					},
+					{
+						"answer": "die Hälfte",
+						"question": "połowa"
+					},
+					{
+						"answer": "die Hochstimmung",
+						"question": "radosny nastrój"
+					},
+					{
+						"answer": "der Läufer",
+						"question": "biegacz"
+					},
+					{
+						"answer": "die Pferdeshow",
+						"question": "pokaz jazdy konnej"
+					},
+					{
+						"answer": "der Rollstuhlfahrer",
+						"question": "osoba poruszająca się na wózku inwalidzkim"
+					},
+					{
+						"answer": "der Sieger",
+						"question": "zwycięzca"
+					},
+					{
+						"answer": "das Sportevent",
+						"question": "impreza sportowa"
+					},
+					{
+						"answer": "der Sportjournalist",
+						"question": "dziennikarz sportowy"
+					},
+					{
+						"answer": "der Treffpunkt",
+						"question": "miejsce spotkania"
+					},
+					{
+						"answer": "der Wettkampf",
+						"question": "zawody"
+					}
+				]
+			},
+			{
+				"type": "verbs",
+				"data": [
+					{
+						"answer": "sich beteiligen an etw.",
+						"question": "brać udział w czymś"
+					},
+					{
+						"answer": "intervenieren",
+						"question": "interweniować"
+					},
+					{
+						"answer": "schießen",
+						"question": "strzelać"
+					},
+					{
+						"answer": "schreien",
+						"question": "krzyczeć"
+					},
+					{
+						"answer": "unternehmen",
+						"question": "przedsięwziąć"
+					}
+				]
+			},
+			{
+				"type": "sentences",
+				"data": [
+					{
+						"answer": "Hast du einen anderen Vorschlag?",
+						"question": "Masz inną propozycję?"
+					},
+					{
+						"answer": "Hättest du Lust auf ...?",
+						"question": "Miałabyś/ Miałbyś ochotę na...?"
+					},
+					{
+						"answer": "Ich würde mir gern ... anschauen.",
+						"question": "Obejrzałabym/ Obejrzałbym sobie..."
+					},
+					{
+						"answer": "Spinnst du?",
+						"question": "Zwariowałaś/ Zwariowałeś?"
+					},
+					{
+						"answer": "Vielleicht gehen wir ...?",
+						"question": "A może pójdziemy...?"
+					},
+					{
+						"answer": "Was hältst du von ...?",
+						"question": "Co myślisz o...?"
+					},
+					{
+						"answer": "Wie wär's, wenn ...?",
+						"question": "Co powiesz na...?"
+					},
+					{
+						"answer": "Willst du mich umbringen?",
+						"question": "Chcesz mnie wykończyć?"
+					},
+					{
+						"answer": "jmdm. den Ball zuspielen",
+						"question": "podawać komuś piłkę"
+					},
+					{
+						"answer": "vor Glück weinen",
+						"question": "płakać ze szczęścia"
+					},
+					{
+						"answer": "ein Tor schießen",
+						"question": "strzelić bramkę/gola"
+					},
+					{
+						"answer": "im Tor stehen",
+						"question": "stać na bramce"
+					}
+				]
+			}
+		]
 	}
 ]
