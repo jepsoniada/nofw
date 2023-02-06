@@ -8,7 +8,7 @@ export class Results extends HTMLElement {
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
 			<div class="resluts">
-				<input- data-type="button" id="back">">&lt;</input->
+				<input- data-type="button" id="back">&lt;</input->
 				<div id="content">
 					<div id="score">
 						${
