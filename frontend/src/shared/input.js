@@ -2,6 +2,16 @@ import { html } from "/static/shared/templating.js"
 import { arrayContains } from "/static/shared/comparisonLib.js"
 
 export class Input extends HTMLElement {
+
+	#value = ''
+	set value(value) {
+		this.#value = value
+		alert(value)
+	}
+	get value() {
+		return this.value
+	}
+
 	constructor() {
 		super()
 		this.type = this.dataset.type ?? "text"
@@ -107,24 +117,18 @@ export class Input extends HTMLElement {
 					}
 				}
 				text.addEventListener("input", (pressed) => {
-					console.log(text.textContent)
-					this.value = text.textContent
+					this.#value = text.textContent
 					if (text.textContent.includes('\n')) {
-						this.value =
-							(text.textContent = text.textContent.replace('\n', ''))
-// 						text.selectionStart =
-// 							(text.selectionEnd = this.value.length)
+						this.#value =
+							(text.textContent = text.textContent.replaceAll('\n', ''))
+
 						const select = getSelection()
 						select.selectAllChildren(text)
 						select.collapseToEnd()
+
 						this.dispatchEvent(new Event("send", { composed: true }))
 					}
 					updateCaret()
-					console.log(text.textContent)
-// 					if (pressed.key == "Enter") {
-// 						pressed.preventDefault()
-// 						console.log("sent")
-// 					}
 				})
 			},
 		},
