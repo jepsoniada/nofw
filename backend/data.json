@@ -948,7 +948,8 @@
 				]
 			}
 		]
-	},{
+	},
+	{
 		"fileName": "2.3 Es steht zwei zu null",
 		"dictionary": [
 			{
@@ -1095,6 +1096,291 @@
 					{
 						"answer": "im Tor stehen",
 						"question": "stać na bramce"
+					}
+				]
+			}
+		]
+	},
+	{
+		"fileName": "3.1 Brahms oder Rammstein?",
+		"dictionary": [
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"answer": "die Architektur",
+						"question": "architektura"
+					},
+					{
+						"answer": "die Bildhauerei",
+						"question": "rzeźbiarstwo"
+					},
+					{
+						"answer": "der Film",
+						"question": "film"
+					},
+					{
+						"answer": "die Grafik",
+						"question": "grafika"
+					},
+					{
+						"answer": "das Kino",
+						"question": "kino"
+					},
+					{
+						"answer": "die Kunst",
+						"question": "sztuka"
+					},
+					{
+						"answer": "die Kunstfotografie",
+						"question": "fotografia artystyczna"
+					},
+					{
+						"answer": "die Literatur",
+						"question": "literatura"
+					},
+					{
+						"answer": "die Malerei",
+						"question": "malarstwo"
+					},
+					{
+						"answer": "die Musik",
+						"question": "muzyka"
+					},
+					{
+						"answer": "die Oper",
+						"question": "opera"
+					},
+					{
+						"answer": "die Presse",
+						"question": "prasa"
+					},
+					{
+						"answer": "das Radio",
+						"question": "radioodbiornik"
+					},
+					{
+						"answer": "das Radio",
+						"question": "radio"
+					},
+					{
+						"answer": "die Skulptur",
+						"question": "rzeźba"
+					},
+					{
+						"answer": "das Theater",
+						"question": "teatr"
+					},
+					{
+						"answer": "die Zeitschrift",
+						"question": "czasopismo"
+					},
+					{
+						"answer": "die Zeitung",
+						"question": "gazeta"
+					},
+					{
+						"answer": "die Band",
+						"question": "zespół"
+					},
+					{
+						"answer": "der Denker",
+						"question": "myśliciel"
+					},
+					{
+						"answer": "der Eintritt",
+						"question": "wstęp"
+					},
+					{
+						"answer": "das Festival",
+						"question": "festiwal"
+					},
+					{
+						"answer": "das Festivalgelände",
+						"question": "teren, na którym odbywa się festiwal"
+					},
+					{
+						"answer": "die Heimat",
+						"question": "ojczyzna, kraj rodzinny"
+					},
+					{
+						"answer": "das Jahrhundert",
+						"question": "wiek"
+					},
+					{
+						"answer": "der Kanon",
+						"question": "kanon"
+					},
+					{
+						"answer": "der Komponist",
+						"question": "kompozytor"
+					},
+					{
+						"answer": "der Newcomer",
+						"question": "nowicjusz"
+					},
+					{
+						"answer": "der Philosoph",
+						"question": "filozof"
+					},
+					{
+						"answer": "der Sänger",
+						"question": "piosenkarz"
+					},
+					{
+						"answer": "der Schriftsteller",
+						"question": "pisarz"
+					},
+					{
+						"answer": "die Stimmung",
+						"question": "nastrój"
+					},
+					{
+						"answer": "die Unterkunft",
+						"question": "zakwaterowanie"
+					},
+					{
+						"answer": "das Vaterland",
+						"question": "ojczyzna"
+					},
+					{
+						"answer": "der Blues",
+						"question": "blues"
+					},
+					{
+						"answer": "die Countrymusik",
+						"question": "country"
+					},
+					{
+						"answer": "die elektronische Musik",
+						"question": "muzyka elektroniczna"
+					},
+					{
+						"answer": "der Folk",
+						"question": "folk"
+					},
+					{
+						"answer": "das Heavy Metal",
+						"question": "heavy metal"
+					},
+					{
+						"answer": "der Hip-Hop",
+						"question": "hip-hop"
+					},
+					{
+						"answer": "der Jazz",
+						"question": "jazz"
+					},
+					{
+						"answer": "die klassische Musik",
+						"question": "muzyka klasyczna"
+					},
+					{
+						"answer": "der Rap",
+						"question": "rap"
+					},
+					{
+						"answer": "der Rock",
+						"question": "rock"
+					},
+					{
+						"answer": "der Soul",
+						"question": "soul"
+					},
+					{
+						"answer": "das Techno",
+						"question": "techno"
+					},
+					{
+						"answer": "die Flöte",
+						"question": "flet"
+					},
+					{
+						"answer": "die Geige",
+						"question": "skrzypce"
+					},
+					{
+						"answer": "die Gitarre",
+						"question": "gitara"
+					},
+					{
+						"answer": "das Schlagzeug",
+						"question": "perkusja"
+					},
+					{
+						"answer": "die Trompete",
+						"question": "trąbka"
+					}
+				]
+			},
+			{
+				"type": "sentences",
+				"data": [
+					{
+						"answer": "Eintritt frei",
+						"question": "wstęp wolny"
+					},
+					{
+						"answer": "Ruhm erlangen",
+						"question": "zdobyć sławę"
+					},
+					{
+						"answer": "mit einem Preis auszeichnen",
+						"question": "nagrodzić, uhonorować nagrodą"
+					}
+				]
+			},
+			{
+				"type": "verbs",
+				"data": [
+					{
+						"answer": "auftreten",
+						"question": "występować"
+					},
+					{
+						"answer": "aussuchen",
+						"question": "wyszukiwać"
+					},
+					{
+						"answer": "sich beeilen",
+						"question": "pośpieszyć się"
+					},
+					{
+						"answer": "erleben",
+						"question": "przeżywać"
+					},
+					{
+						"answer": "verfassen",
+						"question": "pisać"
+					}
+				]
+			},
+			{
+				"type": "adjectives",
+				"data": [
+					{
+						"answer": "ausverkauft",
+						"question": "wyprzedany"
+					},
+					{
+						"answer": "enttäuscht",
+						"question": "rozczarowany"
+					},
+					{
+						"answer": "günstig",
+						"question": "korzystny"
+					},
+					{
+						"answer": "spektakulär",
+						"question": "spektakularny"
+					},
+					{
+						"answer": "hörenswert",
+						"question": "wart posłuchania"
+					},
+					{
+						"answer": "sehenswert",
+						"question": "wart obejrzenia"
 					}
 				]
 			}
