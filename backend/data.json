@@ -1385,5 +1385,298 @@
 				]
 			}
 		]
+	},
+	{
+		"fileName": "3.2 Vorhang auf!",
+		"dictionary": [
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"answer": "die Aufführung",
+						"question": "przedstawienie"
+					},
+					{
+						"answer": "die Ausstellung",
+						"question": "wystawa"
+					},
+					{
+						"answer": "die Bühne",
+						"question": "scena"
+					},
+					{
+						"answer": "der Darsteller",
+						"question": "odtwórca, aktor"
+					},
+					{
+						"answer": "die Dauerausstellung",
+						"question": "wystawa stała"
+					},
+					{
+						"answer": "das Gemälde",
+						"question": "malarstwo, obraz"
+					},
+					{
+						"answer": "das Genre",
+						"question": "gatunek"
+					},
+					{
+						"answer": "der Kulturblog",
+						"question": "blog kulturalny"
+					},
+					{
+						"answer": "die Lesung",
+						"question": "odczyt"
+					},
+					{
+						"answer": "die Premiere",
+						"question": "premiera"
+					},
+					{
+						"answer": "die Sonderausstellung",
+						"question": "wystawa specjalna"
+					},
+					{
+						"answer": "die Vorstellung",
+						"question": "przedstawienie"
+					}
+				]
+			},
+			{
+				"type": "sentences",
+				"data": [
+					{
+						"answer": "im Vorverkauf bekommen",
+						"question": "kupić/ dostać w przedsprzedaży"
+					},
+					{
+						"answer": "der Film läuft täglich um 18.00 Uhr",
+						"question": "film jest wyświetlany codziennie o godzinie 18.00"
+					},
+					{
+						"answer": "Eintrittskarten auf den Namen ... reservieren",
+						"question": "zarezerwować bilety wstępu na nazwisko..."
+					},
+					{
+						"answer": "an der Kasse abholen",
+						"question": "odebrać w kasie"
+					},
+					{
+						"answer": "wir bieten keinen Vorverkauf an",
+						"question": "nie prowadzimy przedsprzedaży"
+					},
+					{
+						"answer": "der Einlass beginnt um 17.30 Uhr",
+						"question": "wstęp od godz. 17.30"
+					},
+					{
+						"answer": "in der dritten Reihe",
+						"question": "w trzecim rzędzie"
+					},
+					{
+						"answer": "die Reservierung stornieren",
+						"question": "anulować rezerwację"
+					}
+				]
+			},
+			{
+				"type": "expresions",
+				"data": [
+					{
+						"answer": "sich auskennen in/ mit etw.",
+						"question": "orientować się w czymś, znać się na czymś"
+					},
+					{
+						"answer": "im Film mitspielen",
+						"question": "grać w filmie"
+					},
+					{
+						"answer": "Regie führen",
+						"question": "reżyserować"
+					}
+				]
+			},
+			{
+				"type": "adjectives",
+				"data": [
+					{
+						"answer": "erforderlich",
+						"question": "konieczny"
+					},
+					{
+						"answer": "rechtzeitig",
+						"question": "na czas, w terminie"
+					}
+				]
+			}
+		]
+	},
+	{
+		"fileName": "3.3 Nicht nur für Leseratten",
+		"dictionary": [
+			{
+				"type": "nouns",
+				"data": [
+					{
+						"answer": "das Abenteuer",
+						"question": "przygoda"
+					},
+					{
+						"answer": "der Band",
+						"question": "tom"
+					},
+					{
+						"answer": "die Bücherwelt",
+						"question": "świat książek"
+					},
+					{
+						"answer": "die Gabe",
+						"question": "dar"
+					},
+					{
+						"answer": "das Geheimnis",
+						"question": "tajemnica"
+					},
+					{
+						"answer": "die Handlung",
+						"question": "akcja"
+					},
+					{
+						"answer": "die Hauptfigur",
+						"question": "główna postać"
+					},
+					{
+						"answer": "der Hauptheld",
+						"question": "główny bohater"
+					},
+					{
+						"answer": "der Kritiker",
+						"question": "krytyk"
+					},
+					{
+						"answer": "die Leseratte",
+						"question": "mól książkowy"
+					},
+					{
+						"answer": "das Werk",
+						"question": "dzieło"
+					},
+					{
+						"answer": "die Ballade",
+						"question": "ballada"
+					},
+					{
+						"answer": "der Comic",
+						"question": "komiks"
+					},
+					{
+						"answer": "die Fantasy-Saga",
+						"question": "saga fantasy"
+					},
+					{
+						"answer": "das Gedicht",
+						"question": "wiersz"
+					},
+					{
+						"answer": "das E-Book",
+						"question": "e-book"
+					},
+					{
+						"answer": "der Kriminalroman",
+						"question": "powieść kryminalna"
+					},
+					{
+						"answer": "das Kinderbuch",
+						"question": "książka dla dzieci"
+					},
+					{
+						"answer": "der Liebesroman",
+						"question": "powieść miłosna"
+					},
+					{
+						"answer": "der Ratgeber",
+						"question": "poradnik"
+					}
+				]
+			},
+			{
+				"type": "verbs",
+				"data": [
+					{
+						"answer": "ablehnen",
+						"question": "odrzucać"
+					},
+					{
+						"answer": "ablenken von etw.",
+						"question": "odrywać od czegoś"
+					},
+					{
+						"answer": "beeindrucken",
+						"question": "robić wrażenie"
+					},
+					{
+						"answer": "darstellen",
+						"question": "przedstawiać"
+					},
+					{
+						"answer": "drehen",
+						"question": "kręcić"
+					},
+					{
+						"answer": "greifen zu etw.",
+						"question": "sięgać po coś"
+					},
+					{
+						"answer": "handeln von etw.",
+						"question": "opowiadać o czymś"
+					},
+					{
+						"answer": "verbieten",
+						"question": "zabraniać"
+					},
+					{
+						"answer": "verfilmen",
+						"question": "ekranizować"
+					},
+					{
+						"answer": "veröffentlichen",
+						"question": "publikować"
+					},
+					{
+						"answer": "versammeln",
+						"question": "zbierać"
+					}
+				]
+			},
+			{
+				"type": "adjectives",
+				"data": [
+					{
+						"answer": "auffallend",
+						"question": "rzucający się w oczy"
+					},
+					{
+						"answer": "aufregend",
+						"question": "ekscytujący"
+					},
+					{
+						"answer": "erfolgreich",
+						"question": "odnoszący sukcesy"
+					},
+					{
+						"answer": "kontrovers",
+						"question": "kontrowersyjny"
+					},
+					{
+						"answer": "tragisch",
+						"question": "tragiczny"
+					},
+					{
+						"answer": "unheimlich",
+						"question": "niesamowity"
+					}
+				]
+			}
+		]
 	}
 ]
