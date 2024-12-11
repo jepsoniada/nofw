@@ -30,7 +30,7 @@ export class Guess extends HTMLElement {
 		this.shadowRoot.innerHTML = `
 			<div id="counter">1/${guessStore.length}</div>
 			<div class="guess">
-				<input- data-type="button" id="back"><span>&lt;</span></input->
+				<input- data-type="iconButton" id="back">&lt;</input->
 				<div id="content">
 					<h3 id="question">${
 						question.done ? '' : question.value.question
