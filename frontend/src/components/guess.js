@@ -28,7 +28,9 @@ export class Guess extends HTMLElement {
 		this.qaDataIterator = qaData[Symbol.iterator]()
 		let question = (this.currentQuestion = this.qaDataIterator.next())
 		this.shadowRoot.innerHTML = `
-			<div id="counter">1/${guessStore.length}</div>
+                        <div id="counter">
+                          <span id="value">1/${guessStore.length}</span>
+                        </div>
 			<div class="guess">
 				<input- data-type="iconButton" id="back">&lt;</input->
 				<div id="content">
@@ -45,10 +47,22 @@ export class Guess extends HTMLElement {
 					margin: 0;
 				}
 				#counter {
+				    container-type: inline-size;
 					position: absolute;
-					inset: 0 5% 0 auto;
 					font-size: 250px;
 					color: #0001;
+				    right: 0;
+				    @container(min-width: 100vw) {
+					* {
+					    rotate: 90deg;
+					    translate: 100%;
+					}
+				    }
+				}
+				#counter #value {
+				    display: inline-block;
+				    transform-origin: top left;
+				    transition: all ease 0.2s;
 				}
 				#back {
 					margin: 0 auto 0 0;
@@ -75,6 +89,7 @@ export class Guess extends HTMLElement {
 				}
 			</style>
 		`
+	this.setCounterWidth()
 		this.shadowRoot.querySelector("#guess-input").addEventListener("send", _ => {
 			this.checkAnswer()
 		})
@@ -149,8 +164,14 @@ export class Guess extends HTMLElement {
 		this.shadowRoot.querySelector("#guess-input").value = ''
 	}
 	incrementCounter() {
-		this.shadowRoot.querySelector("#counter").textContent =
+	this.shadowRoot.querySelector("#counter #value").textContent =
 			`${guessStore.answerCorrectness.length + 1}/${guessStore.length}`
+	this.setCounterWidth()
+    }
+    setCounterWidth() {
+	const counter = this.shadowRoot.querySelector("#counter")
+	const value = this.shadowRoot.querySelector("#counter #value")
+	counter.style.width = `${value.offsetWidth}px`
 	}
 	goToResults () {
 		this.replaceWith(
